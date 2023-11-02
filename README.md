@@ -75,6 +75,19 @@ This video your can help. https://www.youtube.com/watch?v=1IrgbY0YhqM
 The inverter is easy to make, only requires 2 resistors (10K ohm and 4.7K ohm), 1 transistor (BC547b), and one servo cable. These are all very cheap and easy to find.
 ![image](https://github.com/rizacelik/STM32F411CEU6_INAV_Firmware/assets/19993109/ab6d0c71-d6ce-4dff-9e2d-8936900b9bbe)
 
+# Monitoring Battery
+For measuring current:
+
+Use Current Sensor ACS712. Connect ACS712 OUT pin to CURRENT_METER_ADC FC pin.
+
+For measuring voltage:
+
+Use voltage divider scheme with resistors. Maximum battery voltage after dividing should be below 3.3v. Connect battery plus (after dividing, max 3.3v) to VBAT_ADC_CHANNEL pin on FC. Battery GND to FC GND.
+
+![image](https://user-images.githubusercontent.com/19993109/201759640-6365017f-2cce-4822-a51d-53cedb853967.png)
+
+You can use this online voltage divider calculator to play around with different values and get maximum output of 3.3v.
+https://ohmslawcalculator.com/voltage-divider-calculator
 
 # Old version INAV Firmware Full wire connection
 
@@ -84,12 +97,6 @@ The inverter is easy to make, only requires 2 resistors (10K ohm and 4.7K ohm), 
 
 # Camera Switch and Power Switch 
 ![image](https://user-images.githubusercontent.com/19993109/201590186-375f1227-3c79-4911-b299-c99d0dd17070.png)
-
-# Monitoring Battery Voltage
-![image](https://user-images.githubusercontent.com/19993109/201759640-6365017f-2cce-4822-a51d-53cedb853967.png)
-
-You can use this online voltage divider calculator to play around with different values.
-https://ohmslawcalculator.com/voltage-divider-calculator
 
 # Use DC DC converter for Servo Motors
 ![image](https://user-images.githubusercontent.com/19993109/202128769-e25c806f-7465-484e-b5be-e26ed039809d.png)
